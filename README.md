@@ -1,11 +1,11 @@
 # Automatic-Lung-Segmentation
 Segmentation of Chest X-Rays (CXRs) plays a crucial role in computer-aided diagnosis of chest X-Ray (CXR) images. CXRs are one of the most commonly prescribed medical imaging procedures with the voluminous CXR scans placing significant load on radiologists and medical practitioners. Automated organ segmentation is a key step towards computer-aided detection and diagnosis of diseases from CXRs. In this project, we propose a deep convolutional network model trained in an end-to-end setting to facilitate fully automatic lung segmentation from anteroposterior (AP) or posteroanterior (PA) view chest X-Rays, which is based on the UNet++ model architecture, using Efficient Net B4 as the encoder and residual blocks from ResNet to create our decoder blocks. Our network learns to predict binary masks for a given CXR, by learning to discriminate regions of organ, in this case the lungs, from regions of no organ and achieves very realistic and accurate segmentation. In order to generalize our model to CXRs we also employ image pre-processing techniques like top-hat bottom-hat transform, Contrast Limited Adaptive Histogram Equalization (CLAHE), in addition to a couple of randomized augmentation techniques. The datasets chosen by us are also critical components in various computer-aided diagnosis of CXR algorithms. 
 
-Design and Implementation
+##Design and Implementation
 
 1) Image Augmentation: Image Augmentation, since limited dataset is an obstacle in training deep convolutional neural networks, we can rectify this problem using image augmentation which is nothing but simply creating new images by making small modifications in the previous data set, to provide more images for better training and testing. Some of the modifications are:
-a) Rotation – Rotating the image with a very small amount of angle probably 0.5 degree will create a new image. We just have to make sure that while doing this rotation the boundaries of lungs and edges do not go out of the image boundary 
-b) Width shift- images are randomly shifted on the horizontal axis by a fraction of total width 
-c) Height shift - Images are randomly shifted on the vertical axis by a fraction of the total height 
-d) Shearing – It is basically slanting the image; it is different from rotation. In this we fix one axis, and then stretch the image at a certain angle. 
-e) Horizontal flip – In horizontal flipping, images are flipped randomly, by doing this modification, the model will be able to better segment chest radiographs of front as well as back.
+-Rotation – Rotating the image with a very small amount of angle probably 0.5 degree will create a new image. We just have to make sure that while doing this rotation the boundaries of lungs and edges do not go out of the image boundary 
+-Width shift- images are randomly shifted on the horizontal axis by a fraction of total width 
+-Height shift - Images are randomly shifted on the vertical axis by a fraction of the total height 
+-Shearing – It is basically slanting the image; it is different from rotation. In this we fix one axis, and then stretch the image at a certain angle. 
+-Horizontal flip – In horizontal flipping, images are flipped randomly, by doing this modification, the model will be able to better segment chest radiographs of front as well as back.
